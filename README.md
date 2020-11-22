@@ -10,3 +10,5 @@ Project currently in early beta, very experimental with many features to come.
 - Make html background image dirt darker?
 - Better UI
 - Back Button on server data page
+- Error handling
+- Invalid server IP handling
