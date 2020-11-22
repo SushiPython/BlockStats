@@ -11,7 +11,7 @@
       <h2 class="text-center">{{ ip }}</h2>
       <div class="serverbox">
         <img src="{{s.favicon}}" alt="favicon">
-        <div class="centered">{{convert_color_codes_to_html(s.description, "§") | safe}}</div>
+        <div class="centered"><pre>{{convert_color_codes_to_html(s.description, "§") | safe}}</pre></div>
         <span class="ping">{{s.players.online}}/{{s.players.max}}</span>
       </div><br>
       <div>
