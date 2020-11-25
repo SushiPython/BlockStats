@@ -40,7 +40,6 @@ other_style_codes = {
 }
 
 def json_color_codes(json_object):
-  print('yess')
   if isinstance(json_object, list):
     things = []
     for thing in json_object:
@@ -67,9 +66,7 @@ def convert_color_codes_to_html(code, symbol, include_raw=False):
     current_color = None
     current_effects = set()
     if not isinstance(code, str):
-        print(code)
         code = code.decode()
-    print(code)
     output = ''
     text_output = ''
     i = -1
@@ -102,7 +99,10 @@ def cctohtm(code, symbol, include_raw=False):
   if isinstance(code, str):
     return convert_color_codes_to_html(code, symbol)
   
-
+def getSld(host):
+  list = host.split('.')
+  sld = list[-2]
+  return sld.title()
 
 jinja_env.globals[
   'convert_color_codes_to_html'] = cctohtm
@@ -119,7 +119,8 @@ async def server(request):
   ip = request.rel_url.query['ip']
   serverObject = MinecraftServer.lookup(ip)
   s = await serverObject.async_status()
-  return {'s': s, 'ip': ip}
+  print(ip)
+  return {'s': s, 'ip': ip, 'host': serverObject.host, 'sld': getSld(serverObject.host)}
 
 app.add_routes(routes)
 web.run_app(app)

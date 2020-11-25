@@ -8,16 +8,19 @@
   </head>
   <body>
     <div class="box centered">
-      <h2 class="text-center title">{{ ip }}</h2>
+      <h2 class="text-center title">{{ ip }} on BlockStats</h2>
       <div class="serverbox">
         <img src="{{s.favicon}}" alt="favicon">
-        <div class="vertical-center"><pre class="mcFont">{{convert_color_codes_to_html(s.description, "§") | safe}}</pre></div>
-        <span class="ping mcFont">{{s.players.online}}/{{s.players.max}}</span>
+        <span class="mcFont" style="color: white;vertical-align:top;">{{sld}}</span>
+        <pre class="mcFont motd">{{convert_color_codes_to_html(s.description, "§") | safe}}</pre>
+        <img height=21 width=30 style="float: right;" src="https://cdn.discordapp.com/attachments/684132898609299494/780267319166763057/Untitled.png"></img>
+        <span class="players mcFont">{{s.players.online}}<span style="color:#555555;">/</span>{{s.players.max}}</span>
       </div><br>
       <div class="classic">
-        <span><b>Ping</b> {{s.latency}}</span><br>
+        <span><b>Ping</b> {{s.latency}}ms</span><br>
         <span><b>Protocol</b> {{s.version.protocol}}</span><br>
         <span><b>Version</b> {{s.version.name}}</span><br>
+        <span><b>Host</b> {{host}}</span><br>
       </div>
     </div>
   </body>
@@ -27,6 +30,7 @@
   @font-face{font-family:Minecraftia;src:url(//cdn.matdoes.dev/fonts/Minecraftia.ttf)}
   .mcFont {
     font-family: 'Minecraftia', sans-serif;
+    color: #808080;
   }
   .serverbox, .title, .classic {
     font-family: 'Ubuntu', sans-serif;
@@ -39,10 +43,12 @@
     border-style: solid;
     padding: .35em;
     background-image: url("https://i.matdoes.dev/LMREX");
+    position: relative;
   }
-  .ping {
+  .players {
     float: right;
-    color: white;
+    color: #aaaaaa;
+    margin-right: .3em;
   }
   .text-center {
     text-align: center;
@@ -55,12 +61,13 @@
     color: #19297C;
     font-size: 30px;
   }
-  .vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  .motd {
+    left: 4em;
+    position: absolute;
+    bottom: 0px;
+    //font-size: 15px;
+    margin-bottom: .5em;
+    line-height: 1.2;
   }
   .centered {
     position: fixed;

@@ -11,8 +11,8 @@
       <h1 class="text-center">BlockStats</h1>
       <h2 class="text-center">Elegant Minecraft Server Statistics</h2>
       <form method="GET" action="/server">
-        <input type="text" name="ip" placeholder="Server IP" style="width:75%">
-        <input type="submit" value="Search" style="width:22%">
+        <input type="text" class="input" name="ip" placeholder="Server IP" style="width:75%">
+        <input type="submit" class="submit" value="Search" style="width:22%">
       </form>
     </div>
   </body>
@@ -21,6 +21,43 @@
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
   * {
     font-family: 'Ubuntu', sans-serif;
+  }
+  :root {
+    --main: #3F88C5;
+  }
+  .input {
+    background-color: #E7ECEF;
+    color: white;
+    width: 30%;
+    height: 50px;
+    font-size: 21px;
+    border-color: var(--main);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: var(--main);
+    text-align: center;
+  }
+  .submit {
+    background-color: #E7ECEF;
+    border: none;
+    color: white;
+    //width: 30%;
+    height: 50px;
+    font-size: 21px;
+    border-color: var(--main);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--main);
+    transition: .5s;
+  }
+  .submit:hover {
+    background-color: #3476AD;
+    color: #E7ECEF;
   }
   .text-center {
     text-align: center;

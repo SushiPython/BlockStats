@@ -8,7 +8,7 @@ Project currently in early beta, very experimental with many features to come.
 - Obfuscated text support
 - Add plugin list (if query is enabled)
 - Make html background image dirt darker? DONE
-- Better UI
+- Better UI DONE
 - Back Button on server data page
 - Error handling
 - Invalid server IP handling
